@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo Slim 21 — Perca 6kg em 21 Dias</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep:   #0D3B1E;
+    --green-dark:   #1A5C32;
+    --green-mid:    #2E7D52;
+    --green-bright: #3DAA6A;
+    --green-light:  #A8D5B5;
+    --cream:        #F7F3EC;
+    --warm-white:   #FDFAF5;
+    --gold:         #C9A84C;
+    --gold-light:   #E8C97A;
+    --text-dark:    #1C1C1C;
+    --text-mid:     #444;
+    --text-light:   #777;
+    --red-urgency:  #C0392B;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────────── */
+  .hero {
+    background: var(--green-deep);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% 0%, #1e6040 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, #0a2e14 0%, transparent 60%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 82px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fff;
+    text-align: center;
+    max-width: 820px;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2.5vw, 21px);
+    font-weight: 300;
+    color: var(--green-light);
+    text-align: center;
+    max-width: 620px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    background-size: 200% 200%;
+    color: var(--green-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 52px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    animation: shimmer 3s ease infinite 2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(201,168,76,0.5);
+  }
+
+  .hero-guarantee {
+    font-size: 13px;
+    color: var(--green-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-guarantee::before {
+    content: '🔒';
+    font-size: 14px;
+  }
+
+  .hero-price-badge {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 40px;
+    padding: 8px 24px;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .hero-price-badge s {
+    color: var(--text-light);
+    margin-right: 6px;
+  }
+
+  .hero-price-badge strong {
+    color: var(--gold-light);
+    font-size: 20px;
+  }
+
+  /* ── SOCIAL PROOF BAR ──────────────────────────────────────── */
+  .bar {
+    background: var(--green-dark);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .bar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--green-light);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+
+  .bar-item span.icon { font-size: 16px; }
+
+  /* ── SECTION BASE ───────────────────────────────────────────── */
+  section { padding: 80px 20px; }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--green-mid);
+  }
+
+  p.lead {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+  }
+
+  p.body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+  }
+
+  /* ── PROBLEM SECTION ────────────────────────────────────────── */
+  .problem {
+    background: var(--cream);
+    border-top: 3px solid var(--green-light);
+    border-bottom: 3px solid var(--green-light);
+  }
+
+  .pain-list {
+    list-style: none;
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    padding: 16px 20px;
+    background: #fff;
+    border-left: 3px solid var(--red-urgency);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .pain-list li::before {
+    content: '✗';
+    color: var(--red-urgency);
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── SOLUTION SECTION ───────────────────────────────────────── */
+  .solution { background: var(--warm-white); }
+
+  .promise-box {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 100%);
+    border-radius: 8px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promise-box::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .promise-box .promise-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .promise-box .promise-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .promise-box .promise-sub {
+    font-size: 14px;
+    color: var(--green-light);
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  /* ── WHAT YOU GET ───────────────────────────────────────────── */
+  .deliverables { background: var(--cream); }
+
+  .deliverable-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .deliverable-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
+
+  .deliverable-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .deliverable-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+  }
+
+  .deliverable-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  .deliverable-content ul {
+    margin-top: 12px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .deliverable-content ul li {
+    font-size: 14px;
+    color: var(--text-mid);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .deliverable-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-bright);
+    font-weight: 700;
+  }
+
+  /* ── PILLARS ────────────────────────────────────────────────── */
+  .pillars { background: var(--warm-white); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 640px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .bar { gap: 20px; }
+  }
+
+  .pillar-card {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 3px solid var(--green-mid);
+  }
+
+  .pillar-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--green-light);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .pillar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+  }
+
+  .pillar-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  /* ── FOR WHO ────────────────────────────────────────────────── */
+  .for-who { background: var(--cream); }
+
+  .check-list {
+    list-style: none;
+    margin: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+
+  .check-list li::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--green-mid);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── PHASES ─────────────────────────────────────────────────── */
+  .phases { background: var(--green-deep); }
+
+  .phases .section-title { color: #fff; }
+  .phases .section-label { color: var(--gold-light); }
+
+  .phase-timeline {
+    margin-top: 48px;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .phase-timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--green-bright), var(--gold));
+  }
+
+  .phase-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .phase-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 32px;
+    width: 16px;
+    height: 16px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 3px solid var(--green-deep);
+  }
+
+  .phase-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .phase-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .phase-item p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--green-light);
+  }
+
+  /* ── GUARANTEE ──────────────────────────────────────────────── */
+  .guarantee { background: var(--warm-white); }
+
+  .guarantee-box {
+    border: 2px solid var(--green-mid);
+    border-radius: 8px;
+    padding: 48px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  @media (max-width: 600px) {
+    .guarantee-box { flex-direction: column; text-align: center; }
+    .guarantee-badge { margin: 0 auto; }
+  }
+
+  .guarantee-badge {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+  }
+
+  .guarantee-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+
+  .guarantee-content p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  /* ── PRICING ────────────────────────────────────────────────── */
+  .pricing {
+    background: linear-gradient(160deg, var(--green-deep) 0%, #0a2510 100%);
+    text-align: center;
+  }
+
+  .pricing .section-title { color: #fff; }
+  .pricing .section-label { color: var(--gold-light); }
+
+  .price-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 12px;
+    padding: 52px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .price-card::before {
+    content: '🔥 OFERTA DE LANÇAMENTO';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 20px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .old-price {
+    font-size: 18px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+
+  .current-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 76px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .current-price sup {
+    font-size: 32px;
+    vertical-align: super;
+    color: var(--gold);
+  }
+
+  .price-desc {
+    font-size: 15px;
+    color: var(--green-light);
+    margin-bottom: 36px;
+  }
+
+  .price-includes {
+    text-align: left;
+    margin-bottom: 36px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .price-includes li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .price-includes li::before {
+    content: '✓';
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+
+  .btn-buy {
+    display: block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    background-size: 200% 200%;
+    color: var(--green-deep);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 22px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+    letter-spacing: 0.3px;
+    animation: pulse 2.5s ease infinite 3s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 44px rgba(201,168,76,0.55);
+  }
+
+  .secure-badges {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── FAQ ────────────────────────────────────────────────────── */
+  .faq { background: var(--cream); }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 24px 0;
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .faq-a {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-mid);
+  }
+
+  /* ── FOOTER ─────────────────────────────────────────────────── */
+  footer {
+    background: var(--green-deep);
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+  }
+
+  /* ── STICKY CTA ─────────────────────────────────────────────── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--green-deep);
+    border-top: 2px solid var(--gold);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    flex-wrap: wrap;
+  }
+
+  .sticky-cta.visible { transform: translateY(0); }
+
+  .sticky-cta p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .sticky-cta p strong { color: var(--gold-light); }
+
+  .btn-sticky {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--green-deep);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-sticky:hover { transform: scale(1.03); }
+
+  /* ── ANIMATIONS ─────────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(201,168,76,0.4); }
+    50%       { box-shadow: 0 8px 48px rgba(201,168,76,0.7); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <span class="hero-eyebrow">Método comprovado · Sem academia · Sem passar fome</span>
+  <h1 class="hero-title">Perca <em>6kg em 21 dias</em> sem abrir mão da vida que você ama</h1>
+  <p class="hero-subtitle">Um protocolo simples, direto e baseado em ciência — criado para mulheres reais com rotinas reais.</p>
+  <div class="hero-cta-group">
+    <a href="https://pay.hotmart.com/T106055683B" class="btn-primary">QUERO COMEÇAR AGORA →</a>
+    <span class="hero-price-badge"><s>R$97</s> Hoje apenas <strong>R$27</strong></span>
+    <span class="hero-guarantee">Garantia de 15 dias — sem perguntas</span>
+  </div>
+</section>
+
+<!-- ── BAR ───────────────────────────────────────────────────────── -->
+<div class="bar">
+  <div class="bar-item"><span class="icon">📄</span> Guia PDF completo</div>
+  <div class="bar-item"><span class="icon">📊</span> Planilha de tracking</div>
+  <div class="bar-item"><span class="icon">⚡</span> Acesso imediato</div>
+  <div class="bar-item"><span class="icon">🔒</span> Compra 100% segura</div>
+</div>
+
+<!-- ── PROBLEM ───────────────────────────────────────────────────── -->
+<section class="problem">
+  <div class="container reveal">
+    <span class="section-label">Você se identifica?</span>
+    <h2 class="section-title">Você já tentou de tudo e <em>nada funcionou</em> de verdade?</h2>
+    <p class="lead">Não é culpa sua. A maioria das dietas é projetada para falhar.</p>
+    <ul class="pain-list">
+      <li>Cortou carboidrato, perdeu peso, e recuperou tudo em 2 semanas</li>
+      <li>Tentou academia, conseguiu ir por 1 mês, depois a rotina tomou conta</li>
+      <li>Passou fome o dia todo e acabou comendo mais à noite</li>
+      <li>Atingiu um platô e ficou estagnada sem entender por quê</li>
+      <li>Perdeu a motivação quando viu que não ia conseguir manter</li>
+    </ul>
+    <p class="body">O problema não é você — é a abordagem. Dietas que eliminam grupos alimentares inteiros, que exigem horas de academia por semana ou que ignoram a sua vida social estão condenadas ao fracasso desde o início.</p>
+    <p class="body"><strong>O Protocolo Slim 21 foi criado para ser diferente.</strong></p>
+  </div>
+</section>
+
+<!-- ── PROMISE ───────────────────────────────────────────────────── -->
+<section class="solution">
+  <div class="container reveal">
+    <span class="section-label">A solução</span>
+    <h2 class="section-title">Um protocolo que <em>respeita a sua vida</em></h2>
+    <p class="lead">Não existe magia. Existe estratégia. Em 21 dias, você vai reprogramar o seu metabolismo através de escolhas inteligentes — sem eliminar o que você ama, sem passar horas suando na academia, sem passar fome.</p>
+    <div class="promise-box">
+      <div class="promise-number">21</div>
+      <div class="promise-text">dias para transformar o seu corpo<br>e os seus hábitos para sempre</div>
+      <div class="promise-sub">Perca até 6kg seguindo 3 pilares simples e sustentáveis</div>
+    </div>
+    <p class="body">O segredo está em trabalhar <em>com</em> o seu corpo, não contra ele. Janela alimentar inteligente, alimentos sacietantes e movimento leve diário — três pilares que qualquer mulher pode aplicar hoje, independente da rotina.</p>
+  </div>
+</section>
+
+<!-- ── PILLARS ───────────────────────────────────────────────────── -->
+<section class="pillars">
+  <div class="container">
+    <span class="section-label reveal">Os 3 pilares</span>
+    <h2 class="section-title reveal">A base de <em>tudo</em></h2>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-number">01</div>
+        <h3>Janela Alimentar</h3>
+        <p>Comer no momento certo ativa a queima de gordura natural. Sem jejum extremo — só organização.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-number">02</div>
+        <h3>Alimentos Sacietantes</h3>
+        <p>Proteína e fibra primeiro. Você come mais, sente menos fome e absorve menos calorias.</p>
+      </div>
+      <div class="pillar-card reveal">
+        <div class="pillar-number">03</div>
+        <h3>Movimento Leve</h3>
+        <p>20 minutos de caminhada por dia. Sem academia. Sem equipamento. Sem desculpas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DELIVERABLES ──────────────────────────────────────────────── -->
+<section class="deliverables">
+  <div class="container">
+    <span class="section-label reveal">O que você recebe</span>
+    <h2 class="section-title reveal">Tudo o que precisa para <em>começar hoje</em></h2>
+
+    <div class="deliverable-card reveal">
+      <div class="deliverable-icon">📘</div>
+      <div class="deliverable-content">
+        <h3>Guia Completo Protocolo Slim 21</h3>
+        <p>Um PDF com tudo que você precisa saber, organizado em 10 capítulos práticos e diretos ao ponto.</p>
+        <ul>
+          <li>Por que as dietas falham — e o que fazer diferente</li>
+          <li>Os 3 pilares do protocolo explicados passo a passo</li>
+          <li>As 3 fases dos 21 dias com objetivos claros</li>
+          <li>Como comer fora sem sair do protocolo</li>
+          <li>O poder da hidratação e da mentalidade certa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deliverable-card reveal">
+      <div class="deliverable-icon">📊</div>
+      <div class="deliverable-content">
+        <h3>Planilha de Tracking Diário</h3>
+        <p>A sua ferramenta de responsabilidade. Preencha todos os dias e acompanhe a sua transformação em tempo real.</p>
+        <ul>
+          <li>Registo diário de peso com variação automática</li>
+          <li>Monitorização de medidas, sono, humor e hidratação</li>
+          <li>Acompanhamento dos dias com movimento</li>
+          <li>Resumo automático do seu progresso total nos 21 dias</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHASES ────────────────────────────────────────────────────── -->
+<section class="phases">
+  <div class="container">
+    <span class="section-label reveal">O caminho</span>
+    <h2 class="section-title reveal">21 dias, <em>3 fases</em>, 1 resultado</h2>
+    <div class="phase-timeline">
+      <div class="phase-item reveal">
+        <span class="phase-tag">Dias 1–7</span>
+        <h3>Fase 1 — Reset</h3>
+        <p>O corpo elimina inflamação, inchaço e toxinas. Você vai sentir menos barriga, mais energia e mais disposição logo nos primeiros dias.</p>
+      </div>
+      <div class="phase-item reveal">
+        <span class="phase-tag">Dias 8–14</span>
+        <h3>Fase 2 — Adaptação</h3>
+        <p>O metabolismo acelera. A perda de peso começa a ser visível. É aqui que o seu corpo aprende a funcionar de forma mais eficiente.</p>
+      </div>
+      <div class="phase-item reveal">
+        <span class="phase-tag">Dias 15–21</span>
+        <h3>Fase 3 — Resultado</h3>
+        <p>Máxima queima de gordura. Os hábitos já estão instalados. Os resultados aparecem — na balança, nas medidas e no espelho.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOR WHO ────────────────────────────────────────────────────── -->
+<section class="for-who">
+  <div class="container reveal">
+    <span class="section-label">Para quem é</span>
+    <h2 class="section-title">Este protocolo foi feito <em>para você</em> se…</h2>
+    <ul class="check-list">
+      <li>Você já tentou dietas e não conseguiu manter os resultados</li>
+      <li>Você não tem tempo (nem paciência) para horas de academia</li>
+      <li>Você não quer abrir mão de jantar fora ou de uma taça de vinho</li>
+      <li>Você quer um método simples, direto e que caiba na sua rotina</li>
+      <li>Você está cansada de se sentir presa num ciclo de tentativa e fracasso</li>
+      <li>Você quer resultados em 21 dias — não em 6 meses</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── GUARANTEE ─────────────────────────────────────────────────── -->
+<section class="guarantee">
+  <div class="container reveal">
+    <span class="section-label">Risco zero</span>
+    <h2 class="section-title">Garantia <em>total</em> de 15 dias</h2>
+    <div class="guarantee-box">
+      <div class="guarantee-badge">🛡️</div>
+      <div class="guarantee-content">
+        <h3>Se não gostar, devolvemos tudo</h3>
+        <p>Compre hoje com total tranquilidade. Se em 15 dias você não estiver satisfeita com o material, basta enviar um e-mail e reembolsamos 100% do seu investimento — sem perguntas, sem burocracia. O risco é todo nosso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ────────────────────────────────────────────────────── -->
+<section class="pricing" id="comprar">
+  <div class="container">
+    <span class="section-label reveal">Invista em você</span>
+    <h2 class="section-title reveal">Comece hoje por menos do que <em>um cafézinho por dia</em></h2>
+    <div class="price-card reveal">
+      <p class="old-price">De R$97</p>
+      <div class="current-price"><sup>R$</sup>27</div>
+      <p class="price-desc">pagamento único · acesso imediato</p>
+      <ul class="price-includes">
+        <li>Guia Completo Protocolo Slim 21 (PDF)</li>
+        <li>Planilha de Tracking Diário (Excel)</li>
+        <li>Garantia de 15 dias sem perguntas</li>
+        <li>Acesso imediato após o pagamento</li>
+      </ul>
+      <a href="https://pay.hotmart.com/T106055683B" class="btn-buy">QUERO PERDER 6KG EM 21 DIAS →</a>
+      <div class="secure-badges">
+        <span>🔒 Compra Segura</span>
+        <span>💳 Cartão de Crédito</span>
+        <span>✅ Hotmart</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────────────────── -->
+<section class="faq">
+  <div class="container">
+    <span class="section-label reveal">Dúvidas frequentes</span>
+    <h2 class="section-title reveal">Perguntas & <em>Respostas</em></h2>
+
+    <div class="faq-item reveal">
+      <p class="faq-q">Preciso fazer academia?</p>
+      <p class="faq-a">Não. O protocolo usa apenas 20 minutos de caminhada leve por dia. Sem equipamento, sem academia, sem horário fixo. Você pode caminhar no bairro, num parque ou até dentro de casa.</p>
+    </div>
+    <div class="faq-item reveal">
+      <p class="faq-q">Vou passar fome?</p>
+      <p class="faq-a">Não. O protocolo é baseado em escolhas inteligentes, não em restrição extrema. Você vai comer — só vai aprender a comer melhor e nos momentos certos.</p>
+    </div>
+    <div class="faq-item reveal">
+      <p class="faq-q">Posso jantar fora ou beber com os amigos?</p>
+      <p class="faq-a">Sim. O guia tem uma secção específica para vida social — como comer fora, o que escolher no restaurante e como incluir uma taça de vinho sem sair do protocolo.</p>
+    </div>
+    <div class="faq-item reveal">
+      <p class="faq-q">Como recebo o material?</p>
+      <p class="faq-a">Imediatamente após o pagamento. A Hotmart envia os arquivos direto para o seu e-mail. É só fazer o download e começar.</p>
+    </div>
+    <div class="faq-item reveal">
+      <p class="faq-q">E se eu não gostar?</p>
+      <p class="faq-a">Você tem 15 dias de garantia total. Se por qualquer motivo não ficar satisfeita, basta pedir o reembolso e devolvemos todo o valor. Sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2024 Protocolo Slim 21. Todos os direitos reservados.<br>
+  Este produto é de natureza informativa e educacional. Consulte um profissional de saúde antes de iniciar qualquer programa alimentar.<br>
+  Os resultados podem variar de pessoa para pessoa.</p>
+</footer>
+
+<!-- ── STICKY CTA ─────────────────────────────────────────────────── -->
+<div class="sticky-cta" id="stickyCta">
+  <p><strong>Protocolo Slim 21</strong> — Perca 6kg em 21 dias por apenas <strong>R$27</strong></p>
+  <a href="https://pay.hotmart.com/T106055683B" class="btn-sticky">COMPRAR AGORA →</a>
+</div>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Sticky CTA after hero
+  const hero = document.querySelector('.hero');
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    stickyCta.classList.toggle('visible', heroBottom < 0);
+  });
+</script>
+</body>
+</html>
